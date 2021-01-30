@@ -1,4 +1,5 @@
 import React, { Component} from 'react';
+import Button from '@material-ui/core/Button';
 
 const credentials = require('./credentials.json');
 
@@ -35,8 +36,7 @@ class Title extends Component{
       return <div>didn't get a movie</div>;
     }
     return (
-    <div className="App">
-      <a href="/">Back</a>
+    <div className="App appdetail">
        <div className="poster">
         <img
           width="200"
@@ -55,7 +55,9 @@ class Title extends Component{
         <p>Runtime: {this.state.movie.Runtime}</p>
         <p>Actors: {this.state.movie.Actors}</p>
         <p>{this.state.movie.Plot}</p>
+        <Button variant="contained" color="primary" href="/" > Back</Button>
       </div>
+   
     </div>
     );
   }

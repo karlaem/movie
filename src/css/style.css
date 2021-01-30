@@ -13,10 +13,38 @@
     border-radius: 5px;
     border: solid 1px rgb(192, 192, 192);
 }
-.poster{
-    width: 100px;
-    padding: 5px;
-}
+
 .overview{
     font-size: 12px;
+}
+.root{
+    max-width: 345px;
+}
+.media{
+    height: 340px;
+}
+.mrows {
+    margin-top: 20px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    column-gap: 10px;
+    row-gap: 15px;
+}
+.App{
+    width: 80%;
+    margin: 0 auto;
+}
+.details{
+    float: left;
+}
+.details p{
+    line-height: 30px;
+}
+.poster{
+    float: left;
+    padding: 5px;
+}
+.appdetail{
+    margin-top: 50px;
 }
