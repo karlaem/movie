@@ -2,6 +2,8 @@ import React, { Component} from 'react';
 import MovieRow from './movieRow.js';
 import $ from 'jquery';
 
+const credentials = require('./credentials.json');
+
 class App extends Component{
 
   constructor(props){
@@ -12,7 +14,7 @@ class App extends Component{
 
   performSearch(searchtitle) {
     console.log("search using moviedb");
-    const urlmovies ='http://www.omdbapi.com/?apikey=6285f627&s='+ searchtitle;
+    const urlmovies ='http://www.omdbapi.com/?apikey='+credentials.imdb.apikey+'&s='+searchtitle;
     $.ajax({
       url: urlmovies,
       success:(searchResults) =>{

@@ -4,7 +4,6 @@ class movieRow extends React.Component{
   viewMovie(){
     console.log("view movie")
     console.log(this.props.movie)
-    //const url = "http://www.omdbapi.com/?apikey=6285f627&t="+this.props.movie.Title;
     const url = "http://localhost:3000/title/"+this.props.movie.imdbID;
     window.location.href = url
   }

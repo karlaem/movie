@@ -1,4 +1,5 @@
 import React, { Component} from 'react';
+import $ from 'jquery';
 
 const credentials = require('./credentials.json');
 
@@ -15,16 +16,32 @@ class Title extends Component{
     console.log("search using moviedb");
     console.log(searchID);
     const urlmovies ='http://www.omdbapi.com/?apikey='+credentials.imdb.apikey+'&i='+ searchID;
-    fetch(urlmovies)
-    .then(response => response.json())
-    .then(data => console.log(data));
+    $.ajax({
+      url: urlmovies,
+      success:(searchResults) =>{
+        console.log("movie data fetched correctly")
+        //console.log(searchResults)
+        const results = searchResults;
+        //console.log(results[0])
+
+        if(results){
+         const movie = results;   
+         console.log(movie)
+        }
+
+      },
+      error: (xhr, status, err) =>{
+        console.log("movie data error")
+      }
+    })
   }
 
   render() {
     return (
     <div className="App">
-        <h1>Movie Detail fetch</h1>
+        <h1>Movie Detail</h1>
         {this.props.match.params.movieID}
+
     </div>
     );
   }
